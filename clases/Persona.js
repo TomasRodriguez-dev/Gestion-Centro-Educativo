@@ -12,7 +12,7 @@ export default class Persona {
   }
 
   imprimirInformacion() {
-    console.log(`ID/DNI: ${this.id_dni}`);
+    console.log(`DNI: ${this.id_dni}`);
     console.log(`Nombre: ${this.nombre}`);
     console.log(`Apellidos: ${this.apellidos}`);
     console.log(`Estado Civil: ${this.estado_civil}`);
