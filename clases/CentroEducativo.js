@@ -1,3 +1,7 @@
+import Estudiante from "./Estudiante.js";
+import PersonalServicio from "./PersonalServicio.js";
+import Profesor from "./Profesor.js";
+
 export default class CentroEducativo {
     constructor() {
         this.personas = [];
@@ -18,6 +22,32 @@ export default class CentroEducativo {
         } else {
             console.log(`No se encontró a ninguna persona con el DNI ${id_dni}`);
         }
+    }
+
+    // Método para ordenar alfabéticamente las personas por apellidos
+    ordenarPorApellidos() {
+        this.personas.sort((a, b) => a.apellidos.localeCompare(b.apellidos));
+    }
+
+    // Método para filtrar personas por tipo (estudiante, profesor, personal de servicio)
+    filtrarPorTipo(tipo) {
+        return this.personas.filter(persona => {
+            if (tipo === "estudiante" && persona instanceof Estudiante) {
+                return true;
+            }
+            if (tipo === "profesor" && persona instanceof Profesor) {
+                return true;
+            }
+            if (tipo === "personal de servicio" && persona instanceof PersonalServicio) {
+                return true;
+            }
+            return false;
+        });
+    }
+
+    // Método para buscar una persona por su ID/DNI
+    buscarPorDNI(id_dni) {
+        return this.personas.find(persona => persona.id_dni === id_dni);
     }
 
     // Método para imprimir la información de todas las personas
