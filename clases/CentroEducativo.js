@@ -10,7 +10,6 @@ export default class CentroEducativo {
     // Método para dar de alta a una persona
     altaPersona(persona) {
         this.personas.push(persona);
-        console.log(`Se ha dado de alta a ${persona.nombre} ${persona.apellidos}`);
     }
 
     // Método para dar de baja a una persona por su DNI

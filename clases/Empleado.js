@@ -11,10 +11,5 @@ export default class Empleado extends Persona {
     this.num_despacho = nuevo_despacho;
     console.log(`${this.nombre} ${this.apellidos} ha sido reasignado al despacho ${nuevo_despacho}`);
   }
-
-  imprimirInformacion() {
-    super.imprimirInformacion();
-    console.log(`Año de Incorporación: ${this.anio_incorporacion}`);
-    console.log(`Número de Despacho: ${this.num_despacho}`);
-  }
+  
 }
